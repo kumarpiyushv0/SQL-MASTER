@@ -1,0 +1,425 @@
+/* index.css */
+
+/* Base Styles */
+::selection {
+  background-color: #8a54b67d;
+  color: #12127a;
+}
+body {
+  background-image: url("fishy.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  color: #eaeaea;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding: 2rem;
+  line-height: 1.6;
+}
+body::-webkit-scrollbar {
+  display: none;
+  scroll-behavior: smooth;
+}
+h1 {
+  font-family: 'Courier New', monospace;
+  font-size: 60px;
+  font-weight: 100;
+  color: #ffffff74;
+  text-align: left;
+  margin-bottom: 5px;
+}
+h2 {
+  color: #ffffff99;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Form Container */
+form {
+  max-width: 900px;
+  margin: auto;
+  background: rgba(80, 80, 80, 0.3);
+  padding: 30px;
+  border-radius: 15px;
+  border: 1px solid #555;
+}
+
+label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 6px;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+  width: 96%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  border: 1px solid #888;
+  background-color: #8e8e8e6d;
+  color: #ffffff;
+  font-size: 1rem;
+}
+
+option {
+  background-color: rgb(30, 0, 62);
+  color: #a7a7a7;
+}
+
+.column-group {
+  margin-bottom: 25px;
+}
+
+fieldset {
+  border: 2px solid #6c757d;
+  border-radius: 8px;
+  padding: 20px;
+  background: rgba(80, 80, 80, 0.3);
+}
+
+legend {
+  padding: 0 10px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #0066ff;
+}
+
+.column-options label {
+  display: inline-block;
+  margin-right: 15px;
+  font-size: 0.95rem;
+}
+
+button {
+  background-color: rgba(0, 79, 215, 0.504);
+  border: black;
+  color: rgb(255, 255, 255);
+  padding: 10px 10px;
+  margin: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  color: rgb(26, 26, 26);
+  background-color: rgba(0, 166, 249, 0.838);
+}
+
+button[type="submit"] {
+  background-color: rgba(0, 136, 29, 0.578);
+}
+
+button[type="submit"]:hover {
+  color: rgb(0, 0, 0);
+  background-color: rgba(0, 182, 40, 0.882);
+}
+
+.nav {
+  text-align: left;
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+}
+
+.nav a {
+  color: #0066ff;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: bold;
+}
+
+.nav a:hover {
+  color: #ffffff74;
+}
+
+#loading {
+  text-align: center;
+  font-style: italic;
+  color: #f0db4f;
+  margin-bottom: 20px;
+}
+
+#error {
+  background-color: rgba(255, 0, 0, 0.2);
+  color: #ff6b6b;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.section {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  margin-bottom: 30px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#schemasContainer button,
+#tablesContainer button {
+  margin: 8px;
+  padding: 10px 15px;
+  background-color: rgba(0, 64, 128, 0.6);
+  border: 1px solid #aaa;
+  border-radius: 6px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+#schemasContainer button:hover,
+#tablesContainer button:hover {
+  background-color: rgba(0, 128, 192, 0.9);
+}
+
+#rowsTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+#rowsTable th,
+#rowsTable td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
+  color: #ffffff;
+}
+
+#rowsTable th {
+  background-color: rgba(0, 64, 128, 0.5);
+  font-weight: bold;
+}
+
+#insertRowFields label {
+  display: block;
+  margin: 10px 0 5px;
+}
+
+#insertRowFields input[type="text"] {
+  width: 90%;
+  padding: 8px;
+  border-radius: 5px;
+  background-color: #444;
+  border: 1px solid #999;
+  color: #fff;
+}
+
+#insertRowForm h4 {
+  margin-top: 20px;
+  color: #80ffea;
+}
+
+.remove-btn {
+  background-color: rgba(255, 0, 0, 0.6);
+}
+
+.remove-btn:hover {
+  background-color: rgba(255, 0, 0, 0.9);
+}
+
+@media (max-width: 600px) {
+  form {
+    padding: 20px;
+  }
+
+  input,
+  select,
+  button {
+    font-size: 0.95rem;
+  }
+
+  .column-options label {
+    display: block;
+    margin-bottom: 5px;
+  }
+}
+
+
+
+
+/* Container Styling */
+.schema-viewer-container {
+  background: #3232326f;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  max-width: 1000px;
+  margin: 2rem auto;
+  text-align: center;
+}
+
+/* Headings */
+.heading {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.subheading {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+/* Messages */
+.loading-text {
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.error-text,
+.success-text {
+  display: inline-block;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.error-text {
+  color: #b91c1c;
+  background: #fee2e2;
+}
+
+.success-text {
+  color: #065f46;
+  background: #d1fae5;
+}
+
+/* Buttons */
+.schema-button,
+.table-button,
+.back-button,
+.edit-button,
+.delete-button,
+.submit-button {
+  padding: 0.5rem 1rem;
+  margin: 0.3rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.schema-button,
+.table-button {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.schema-button:hover,
+.table-button:hover {
+  background-color: #2563eb;
+}
+
+.back-button {
+  background: none;
+  color: #2563eb;
+  text-decoration: underline;
+  margin-bottom: 1rem;
+}
+
+.edit-button {
+  color: #2563eb;
+  background: none;
+}
+
+.delete-button {
+  color: #dc2626;
+  background: none;
+}
+
+.submit-button {
+  background-color: #10b981;
+  color: white;
+}
+
+.submit-button:hover {
+  background-color: #059669;
+}
+
+/* Table Styling */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem auto;
+}
+
+.table-header {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  background-color: #3232326f;
+}
+
+.pk-column {
+  background-color: #3232326f;
+  font-weight: bold;
+}
+
+.table-cell {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+}
+
+/* Form Styling */
+.form-container {
+  text-align: left;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.form-heading {
+  font-size: 1.25rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.form-label {
+  font-weight: 500;
+}
+
+.form-input {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .schema-viewer-container {
+    padding: 1rem;
+  }
+
+  .heading {
+    font-size: 1.5rem;
+  }
+
+  .subheading {
+    font-size: 1.25rem;
+  }
+
+  .form-container {
+    gap: 1rem;
+  }
+
+  .data-table th,
+  .data-table td {
+    font-size: 0.875rem;
+    padding: 0.5rem;
+  }
+}
